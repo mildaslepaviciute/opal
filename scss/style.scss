@@ -2,11 +2,6 @@
 
 $primary:  #000000;
 
-@font-face {
-    font-family: '';
-    src: url(../);
-}
-
 
 /* ------- MAIN INFO -------- */
 
@@ -17,19 +12,19 @@ $primary:  #000000;
 }
 
 html {
-    font-family: "Poppins";
+    font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     color: #333;
-    font-size: 16px;
+    font-size: 17px;
     text-rendering: optimizeLegibility;
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: "Poppins";
+    font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     color: #333;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 
@@ -45,6 +40,26 @@ body {
 
 .text-black {
     color: black;
+}
+
+.text-grey {
+    color: #333;
+}
+
+.font-m {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.text-xs {
+    font-size: 0.77rem;
+}
+
+.text-md {
+    font-size: 1.22rem;
+}
+
+strong {
+    font-weight: 600;
 }
 
 
@@ -73,32 +88,122 @@ body {
     width: 100px;
 }
 
+.rounded-10 {
+    border-radius: 10px;
+}
+
+.shadow {
+    box-shadow: 0 5px 10px 0 rgba(51,51,51,0.1) !important;
+}
+
+.pt-nav {
+    padding-top: 80px;
+}
 
 /* ------- NAVBAR -------- */
   
-.logo-main {
+.navbar-brand {
+    padding-right: 40px;
+}
+
+.navbar-brand img {
     width: 100px;
+}
+
+.nav-item {
+    padding-right: 20px;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.navbar .dropdown-toggle::after {
+    color: #fff;
+}
+
+#navModal .modal-content {
+    background: linear-gradient(135deg, #004A82 0%, #00B9EA 40.29%, #00B9EA 75.9%, #00B500 100%);
 }
 
 
 /* ------- HEADER -------- */
 
 header {
-    background: url(../img/hero-img.jpg);
+    background: linear-gradient(135deg, #004A82 0%, #00B9EA 40.29%, #00B9EA 75.9%, #00B500 100%);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 90vh; 
+    min-height: 100vh; 
+}
+
+.bg-header-img {
+    background-image: url(../img/pictures/landing-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh; 
 }
 
 
 /* ------- FOOTER -------- */
 
 
+/* ------- DROPDOWN -------- */
+
+.dropdown-menu {
+    border-radius: 10px;
+    min-width: 6rem;
+}
+
+
 /* ------- BUTTONS -------- */
 
 .btn {
-    min-width: 150px;
+    min-width: 120px;
+    border-radius: 10px;
+    padding: 13px 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #333;
+}
+
+.btn-blue {
+    background-color: #113164;
+    color: #fff;
+}
+
+.btn-outline-white {
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    &:hover {
+        background-color: #fff;
+        color: #333;
+        transition-duration: .3s;
+    }
+}
+
+.btn-repeat {
+    width: 43px;
+    height: 43px;
+    box-shadow: 0 5px 10px 0 rgba(51,51,51,0.1) !important;
+    transition-duration: 0.25s;
+    &:hover {
+        box-shadow: 0 5px 10px 0 rgba(51,51,55,0.2) !important;
+        transition-duration: 0.35s;
+    }
+}
+
+.navbar .btn {
+    font-size: 0.9rem;
 }
 
 .button-style-none {
@@ -185,8 +290,16 @@ button:focus {
     left: 0;
 }
 
+.left-50 {
+    left: 50%;
+}
+
 .right-0 {
     right: 0;
+}
+
+.translate-50 {
+    transform: translate(-50%, -50%);
 }
 
 .z-1 {
@@ -238,9 +351,9 @@ a:hover {
 
 // Large devices
 @media (min-width: 992px) {
-    .container {
-        width: 78%;
-    }
+    // .container {
+    //     width: 78%;
+    // }
 
     .position-lg-absolute {
         position: absolute;
@@ -267,7 +380,59 @@ a:hover {
 
 // Extra large devices
 @media (min-width: 1600px) {
-    .container {
-        width: 70%;
+    // .container {
+    //     width: 70%;
+    // }
+}
+
+
+
+
+
+@media (min-width: 768px) {
+    .animate {
+      animation-duration: 0.3s;
+      -webkit-animation-duration: 0.3s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both;
     }
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateY(1rem);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0rem);
+      opacity: 1;
+    }
+  
+    0% {
+      transform: translateY(1rem);
+      opacity: 0;
+    }
+  }
+  
+  @-webkit-keyframes slideIn {
+    0% {
+      -webkit-transform: transform;
+      -webkit-opacity: 0;
+    }
+  
+    100% {
+      -webkit-transform: translateY(0);
+      -webkit-opacity: 1;
+    }
+  
+    0% {
+      -webkit-transform: translateY(1rem);
+      -webkit-opacity: 0;
+    }
+  }
+  
+  .slideIn {
+    -webkit-animation-name: slideIn;
+    animation-name: slideIn;
 }
